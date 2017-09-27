@@ -6,10 +6,10 @@
   
 	<v-navigation-drawer style="padding: 6px 10px 40px 1561px;background:#33373d;">
 	 <v-toolbar>
-	    <router-link v-if="loggedIn" to="/logout">Log out</router-link>
-        <router-link v-if="!loggedIn" to="/login"><b>Log in |</b></router-link>
-        <router-link to="/home"><b>Home |</b></router-link>
-        <router-link to="/dashboard"><b>Dashboard </b></router-link>
+	    <router-link v-if="!loggedIn" to="/login"><b>Log in |</b></router-link>
+        <router-link to="/customerprofile"><b>Customer Profile | </b></router-link>
+        <router-link to="/appconfig"><b>AppConfig </b></router-link>
+		<router-link to="/SignUP"><b>SignUP </b></router-link>
 	</v-toolbar>
     </v-navigation-drawer>
     <template v-if="$route.matched.length">
@@ -23,18 +23,9 @@
 </template>
 
 <script>
-  import auth from './auth'
+  
   export default {
-    data () {
-      return {
-        loggedIn: auth.loggedIn()
-      }
-    },
-    created () {
-      auth.onChange = loggedIn => {
-        this.loggedIn = loggedIn
-      }
-    }
+  
   }
 </script>
 <style>
