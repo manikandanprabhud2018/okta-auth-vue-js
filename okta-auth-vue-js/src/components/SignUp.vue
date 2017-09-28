@@ -2,11 +2,14 @@
 <div style="padding: 171px 19px 10px 900px;">
   <div>
   <form @submit.prevent="login" autocomplete="off" class="form-signin">
-    <label><input v-model="email" placeholder="Email Address" type="text" v-focus class="form-control" required=""></label><br>
-	  <label><input v-model="firstname" placeholder="First Name" type="text" v-focus class="form-control" required=""></label><br>
-	    <label><input v-model="lastname" placeholder="Last Name" type="text" v-focus class="form-control" required=""></label><br>
-		  <label><input v-model="company" placeholder="Company" type="text" v-focus class="form-control" required=""></label><br>
-		  <button class="btn-default" type="submit">Sign Up</button>
+     <label><input v-model="firstname" placeholder="First Name" type="text" v-focus class="form-control" required=""></label><br>
+	 <label><input v-model="lastname" placeholder="Last Name" type="text" v-focus class="form-control" required=""></label><br>
+	 <label><input v-model="email" placeholder="Email Address" type="text" v-focus class="form-control" required=""></label><br>
+	 <label><input v-model="username" placeholder="Username" type="text" v-focus class="form-control" required=""></label><br>
+	 <label><input v-model="password" placeholder="Password" type="password" v-focus class="form-control" required=""></label><br>
+	 <label><input v-model="question" placeholder="Security Question" type="text" v-focus class="form-control" required=""></label><br>
+	 <label><input v-model="answer" placeholder="Answer" type="text" v-focus class="form-control" required=""></label><br>
+	 <button class="btn-default" type="submit">Sign Up</button>
    </form>
   </div>
   </div>
@@ -24,7 +27,7 @@
     },
     methods: {
       login () {
-        signup.login(this.email, this.firstname, this.lastname, this.company, loggedIn => {
+        signup.login(this.firstname, this.lastname, this.email, this.username, this.password, this.question, this.answer, loggedIn => {
           if (!loggedIn) {
             this.error = true
           } else {
